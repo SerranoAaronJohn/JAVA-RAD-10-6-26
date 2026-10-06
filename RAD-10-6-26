@@ -1,0 +1,149 @@
+//Java act1
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String name;
+        int age;
+        String address;
+        double weight;
+        double height;
+
+        System.out.print("Enter your name: ");
+        name = input.nextLine();
+
+        System.out.print("Enter your age: ");
+        age = input.nextInt();
+        input.nextLine();
+
+        System.out.print("Enter your address: ");
+        address = input.nextLine();
+
+        System.out.print("Enter your weight in kilograms: ");
+        weight = input.nextDouble();
+
+        System.out.print("Enter your height in centimeters : ");
+        height = input.nextDouble();
+
+        System.out.printf(
+            "\nMy name is %s. I am %d years old and i live at %s. " +
+            "My weight is %2f kilograms grams and my height is %2f centimeters. %n",
+            name, age, address, weight, height);
+
+        input.close();
+    }
+}
+//act2
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double x, y, result = 0;
+        char operator;
+        char again;
+
+        do {
+            System.out.print("Enter the value of X: ");
+            x = input.nextDouble();
+
+            System.out.print("Enter the value of Y: ");
+            y = input.nextDouble();
+
+            System.out.print("Choose an operator (+, -, *, /): ");
+            operator = input.next().charAt(0);
+
+            switch (operator) {
+                case '+':
+                    result = x + y;
+                    System.out.println("Result: " + result);
+                    break;
+
+                case '-':
+                    result = x - y;
+                    System.out.println("Result: " + result);
+                    break;
+
+                case '*':
+                    result = x * y;
+                    System.out.println("Result: " + result);
+                    break;
+
+                case '/':
+                    if (y != 0) {
+                        result = x / y;
+                        System.out.printf("Result: %.2f%n", result);
+                    } else {
+                        System.out.println("Error: Cannot divide by zero.");
+                    }
+                    break;
+
+                default:
+                    System.out.println("Invalid operator.");
+            }
+
+            System.out.print("\nDo you want to perform another calculation? (Y/N): ");
+            again = input.next().charAt(0);
+
+            System.out.println();
+
+        } while (again == 'Y' || again == 'y');
+
+        System.out.println("Program ended.");
+        input.close();
+    }
+}
+// ACT 3
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number;
+
+        System.out.print("Enter a number not greater than 30: ");
+        number = input.nextInt();
+
+        if (number <= 0 || number > 30) {
+            System.out.println("Invalid input. Please enter a number from 1 to 30.");
+        } else {
+            System.out.println("\nNumbers:");
+
+            for (int i = 1; i <= number; i++) {
+
+                // Skip number 7
+                if (i == 7) {
+                    continue;
+                }
+
+                System.out.println(i);
+
+                // Stop the loop at number 30
+                if (i == 30) {
+                    break;
+                }
+            }
+        }
+
+        input.close();
+    }
+}
+//Act4
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int number = 50;
+        
+        while (number >= 1){
+            System.out.println(number);
+            number--;
+        }
+	}
+}
